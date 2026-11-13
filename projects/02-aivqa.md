@@ -4,9 +4,9 @@
 > **역할** OCR · 이미지 해상도 연구, 외부 데이터 멀티모달 RAG DB, 논문 Figure · HCLT 발표<br>
 > **기간** 2026.06 – 08
 
-**Publication** 김준형†, **곽혜진†◦**, 이신영†, 이정빈†. 「한국문화 멀티모달 질의응답을 위한 멀티모달 검색 증강 생성」, *2026년도 한글 및 한국어 정보처리 학술대회 (HCLT 2026)*, Poster. († 공동 제1저자, ◦ 발표자)
+**Publication** 김준형†, **곽혜진†◦**, 이신영†, 이정빈†. 「한국문화 멀티모달 질의응답을 위한 멀티모달 검색 증강 생성」, *2026년도 한글 및 한국어 정보처리 학술대회 (HCLT 2026)*, Poster. († 공동 제1저자, ◦ 발표자) · [논문 PDF](../assets/02-hclt2026-paper.pdf) · [포스터 PDF](../assets/02-hclt2026-poster.pdf)
 
-**Links** [대회 페이지](https://kli.korean.go.kr/benchmark/taskOrdtm/taskList.do?taskOrdtmId=211) · [코드](https://github.com/Jinx921/CV_korea) · [팀 저장소](https://github.com/kjh0902/AIVQA)
+**Links** [대회 페이지](https://kli.korean.go.kr/benchmark/taskOrdtm/taskList.do?taskOrdtmId=211) · [코드](https://github.com/Jinx921/CV_korea) · [팀 저장소](https://github.com/kjh0902/AIVQA) · [논문 PDF](../assets/02-hclt2026-paper.pdf) · [포스터 PDF](../assets/02-hclt2026-poster.pdf)
 
 <br>
 

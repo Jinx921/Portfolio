@@ -43,14 +43,14 @@
 > 2026 빅콘테스트 데이터활용분야 · 4명 · **AI 에이전트 개발**, 데이터 분석, 외부 데이터 수집
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Pretendard, Inter, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Malgun Gothic, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
 flowchart LR
-    U["사용자 질문<br/>관리자 · 현장 · 시민"] --> C1{"지역 · 권한<br/>확인"}
-    C1 -->|통과| O["오케스트레이터<br/>Claude Sonnet · 최대 8회"]:::mine
+    U["사용자 질문<br/>관리자 · 현장 · 시민"] --> C1{"권한<br/>확인"}
+    C1 -->|통과| O["오케스트레이터<br/>Claude Sonnet<br/>질문당 최대 8회"]:::mine
     C1 -->|실패| G1["안내 문구"]
     O <-->|도구 호출 · 결과 요약| E["분석 엔진<br/>도구 8개"]
     DB[("250m 격자 데이터<br/>통신 · 인구 · 복지자원")]:::data --> E
-    O --> S["답변 제출<br/>분석 · 문서 · 짧은 답"] --> CK["답변 검증<br/>숫자 대조 · 근거 · 한계 문장"] --> V{"통과?"}
+    O --> S["답변 제출<br/>분석 · 문서 · 짧은 답"] --> CK["답변 검증<br/>숫자 대조 · 근거<br/>한계 문장"] --> V{"통과"}
     V -->|통과| J["화면 조각 JSON<br/>지도 · 카드 · 문서"]:::out --> UI["역할별 화면"]
     V -.->|실패 · 1회 재작성| O
     classDef default fill:#FFFFFF,stroke:#595D64,color:#282B30
@@ -76,11 +76,11 @@ flowchart LR
 > 2026년 인공지능(AI)말평 경진대회 · BITAmin CV팀 · 4명 · HCLT 2026 포스터 공동 제1저자 · **OCR · 이미지 해상도 연구**, 멀티모달 RAG DB
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Pretendard, Inter, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Malgun Gothic, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
 flowchart LR
-    Q["이미지 + 질문<br/>객관식 · 단답 · 서술형"] --> OCR["OCR · 고해상도<br/>이미지 속 문자 단서"]:::mine --> QG["검색어 생성<br/>Base Kanana · 최대 5개"] --> TR["Text Retrieval<br/>제목 일치 → KURE-v1"]
-    Q --> IR["Image Retrieval<br/>CLIP ViT-B/32 · MAX_SIM"]
-    KB[("한국문화 지식 DB<br/>공공 데이터 5곳 · Qdrant")]:::data --- TR
+    Q["이미지 + 질문<br/>객관식 · 단답<br/>서술형"] --> OCR["OCR · 고해상도<br/>이미지 속<br/>문자 단서"]:::mine --> QG["검색어 생성<br/>Base Kanana<br/>최대 5개"] --> TR["Text Retrieval<br/>제목 일치<br/>→ KURE-v1"]
+    Q --> IR["Image Retrieval<br/>CLIP ViT-B/32<br/>MAX_SIM"]
+    KB[("한국문화 지식 DB<br/>공공 데이터 5곳<br/>Qdrant")]:::data --- TR
     KB --- IR
     TR --> F["점수 결합<br/>Top-3 문서"]
     IR --> F
@@ -111,14 +111,14 @@ flowchart LR
 > LG Aimers 9기 해커톤 · 4명 · **사후 보정 · 제출 판정 기준**, 검증 도구
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Pretendard, Inter, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Malgun Gothic, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
 flowchart LR
-    X["투구 데이터<br/>78개 피처"] --> N["MLP × 8<br/>임베딩 · 콜드스타트 보정"] & L["LightGBM × 20"] & C["CatBoost × 12"]
-    N & L & C --> RT["R / F 라우팅<br/>일반 · F 전문가"] --> PH["사후 보정<br/>logit 8축 · 확률 보정"]:::mine
-    PH -->|확률 예측| G1{"빌드 검증<br/>통과?"}
-    G1 -->|통과| G2{"기대 이득<br/>충분?"}
+    X["투구 데이터<br/>78개 피처"] --> N["MLP × 8<br/>임베딩<br/>콜드스타트 보정"] & L["LightGBM × 20"] & C["CatBoost × 12"]
+    N & L & C --> RT["R / F 라우팅<br/>일반 · F 전문가"] --> PH["사후 보정<br/>logit 8축<br/>확률 보정"]:::mine
+    PH -->|확률 예측| G1{"빌드<br/>검증"}
+    G1 -->|통과| G2{"기대<br/>이득"}
     G1 -->|실패| ST["중단"]
-    G2 -->|예| SUB["슬롯 배분 · 제출<br/>Private 1151.01512"]:::out
+    G2 -->|예| SUB["슬롯 배분 · 제출<br/>Private<br/>1151.01512"]:::out
     G2 -->|아니오| EX["제외"]
     classDef default fill:#FFFFFF,stroke:#595D64,color:#282B30
     classDef mine fill:#192334,stroke:#192334,color:#FFFFFF
@@ -143,16 +143,16 @@ flowchart LR
 > SNU AI Challenge · 4명 · **데이터 분할 설계 · VLM 학습** 전 과정
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'Pretendard, Inter, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Malgun Gothic, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
 flowchart LR
-    D["Train 9,535<br/>문장 + 이미지 4장"] --> M["MD5 비교<br/>이미지 38,140장"] --> B["샘플 묶기<br/>같은 이미지 = 한 묶음"] --> F["묶음 단위 5-Fold"]
+    D["Train 9,535<br/>문장 +<br/>이미지 4장"] --> M["MD5 비교<br/>이미지 38,140장"] --> B["샘플 묶기<br/>같은 이미지<br/>= 한 묶음"] --> F["묶음 단위 5-Fold"]
     F --> TR["Fold 1~4 · 학습"] --> AU["분포 보존 증강"] --> Q["Qwen3-VL-8B<br/>+ LoRA r=16"]:::mine
     Q --> H1["24-class head"] & H2["pairwise head"]
-    F --> VA["Fold 0 · 검증 1,915개"] --> EM["Exact Match 평가<br/>0.525 → 0.560"]
+    F --> VA["Fold 0 · 검증 1,915개"] --> EM["Exact Match<br/>평가<br/>0.525 → 0.560"]
     Q -->|예측| EM
-    EM --> DEC{"검증 개선?"}
+    EM --> DEC{"검증<br/>개선"}
     DEC -.->|아니오 · 실험 반복| AU
-    DEC -->|예| FIN["Train 전체 재학습<br/>최종 0.81300"]:::out
+    DEC -->|예| FIN["Train 전체<br/>재학습<br/>최종 0.81300"]:::out
     classDef default fill:#FFFFFF,stroke:#595D64,color:#282B30
     classDef mine fill:#192334,stroke:#192334,color:#FFFFFF
     classDef data fill:#F7F7F5,stroke:#D9DCE0,color:#282B30
