@@ -1,12 +1,12 @@
 # 곽혜진 Portfolio
 
-멀티모달 모델(VLM) 파인튜닝과 RAG, LLM 에이전트, 정형 데이터 모델링을 대회와 프로젝트에서 직접 다뤄 왔습니다.
+이미지와 텍스트를 함께 다루는 멀티모달 AI와 LLM 에이전트를 만들어 왔습니다. 모델이 낸 결과를 그대로 쓰기보다, 근거를 확인하고 검증하는 과정까지 함께 설계하는 것을 중요하게 생각합니다.
 
-| | |
-|---|---|
-| **소속** | 숙명여자대학교 |
-| **관심 분야** | Vision-Language Model · Multimodal RAG · LLM Agent · Tabular ML |
-| **GitHub** | [github.com/Jinx921](https://github.com/Jinx921) |
+<table>
+<tr><td><b>소속</b></td><td>숙명여자대학교</td></tr>
+<tr><td><b>관심 분야</b></td><td>Vision-Language Model · Multimodal RAG · LLM Agent · 데이터 분석</td></tr>
+<tr><td><b>GitHub</b></td><td><a href="https://github.com/Jinx921">github.com/Jinx921</a></td></tr>
+</table>
 
 <br>
 
@@ -50,7 +50,7 @@ flowchart LR
     C1 -->|실패| G1["안내 문구"]
     O <-->|도구 호출 · 결과 요약| E["분석 엔진<br/>도구 8개"]
     DB[("250m 격자 데이터<br/>통신 · 인구 · 복지자원")]:::data --> E
-    O --> S["답변 제출<br/>분석 · 문서 · 짧은 답"] --> V{"답변 검증<br/>숫자 · 근거 · 한계 문장"}
+    O --> S["답변 제출<br/>분석 · 문서 · 짧은 답"] --> CK["답변 검증<br/>숫자 대조 · 근거 · 한계 문장"] --> V{"통과?"}
     V -->|통과| J["화면 조각 JSON<br/>지도 · 카드 · 문서"]:::out --> UI["역할별 화면"]
     V -.->|실패 · 1회 재작성| O
     classDef default fill:#FFFFFF,stroke:#595D64,color:#282B30
@@ -115,8 +115,8 @@ flowchart LR
 flowchart LR
     X["투구 데이터<br/>78개 피처"] --> N["MLP × 8<br/>임베딩 · 콜드스타트 보정"] & L["LightGBM × 20"] & C["CatBoost × 12"]
     N & L & C --> RT["R / F 라우팅<br/>일반 · F 전문가"] --> PH["사후 보정<br/>logit 8축 · 확률 보정"]:::mine
-    PH -->|확률 예측| G1{"빌드 검증<br/>8항목 통과?"}
-    G1 -->|통과| G2{"기대 이득<br/>+0.x 이상?"}
+    PH -->|확률 예측| G1{"빌드 검증<br/>통과?"}
+    G1 -->|통과| G2{"기대 이득<br/>충분?"}
     G1 -->|실패| ST["중단"]
     G2 -->|예| SUB["슬롯 배분 · 제출<br/>Private 1151.01512"]:::out
     G2 -->|아니오| EX["제외"]
