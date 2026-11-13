@@ -12,7 +12,7 @@
 
 ## Highlights
 
-- **HCLT 2026 포스터 (공동 제1저자 · 발표자)** — 「한국문화 멀티모달 질의응답을 위한 멀티모달 검색 증강 생성」
+- **HCLT 2026 논문 (공동 제1저자 · 발표자)** — 「한국문화 멀티모달 질의응답을 위한 멀티모달 검색 증강 생성」
 - **2026 빅콘테스트 1차 서류 합격** — 동네 돌봄 지도 (고립 위험 동네를 찾아 돌봄을 잇는 AI 에이전트), 2차 발표 2026.11.27
 - **LG Aimers 9기 해커톤** — 최종 Private 1151.01512 · 상위 8% (1084.14 → 1151.02)
 - **SNU AI Challenge** — Qwen3-VL-8B 기반 4프레임 시간순서 복원, 최종 리더보드 0.81300
@@ -73,7 +73,7 @@ flowchart LR
 
 ### 02. AIVQA - 한국문화 멀티모달 RAG
 
-> 2026년 인공지능(AI)말평 경진대회 · BITAmin CV팀 · 4명 · HCLT 2026 포스터 공동 제1저자 · **OCR · 이미지 해상도 연구**, 멀티모달 RAG DB
+> 2026년 인공지능(AI)말평 경진대회 · BITAmin CV팀 · 4명 · HCLT 2026 논문 공동 제1저자 · **OCR · 이미지 해상도 연구**, 멀티모달 RAG DB
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Malgun Gothic, sans-serif','fontSize':'14px','primaryColor':'#FFFFFF','primaryTextColor':'#282B30','primaryBorderColor':'#595D64','lineColor':'#595D64','clusterBkg':'#F7F7F5','clusterBorder':'#D9DCE0','edgeLabelBackground':'#FFFFFF','titleColor':'#282B30'}}}%%
@@ -202,7 +202,7 @@ flowchart LR
 |---|---|---|
 | 2026.03 – 05 | **2026 서울시 빅데이터 활용 경진대회** | 따릉이 고장 예측 · 정비 대시보드 (07) |
 | 2026.05 | **믹스업 데이터톤** | SMILES 분자 구조로 hERG 독성(심장 이온 채널 저해)을 예측하는 회귀 과제. RDKit descriptor · Morgan fingerprint · ChemBERTa 피처를 view별 GBDT로 학습해 앙상블 |
-| 2026.06 – 08 | **2026년 인공지능(AI)말평 경진대회** · 한국문화 멀티모달 질의응답 | 한국문화 VQA, Kanana 3B + 멀티모달 RAG로 33B 모델 상회 · HCLT 2026 poster accept (02) |
+| 2026.06 – 08 | **2026년 인공지능(AI)말평 경진대회** · 한국문화 멀티모달 질의응답 | 한국문화 VQA, Kanana 3B + 멀티모달 RAG로 33B 모델 상회 · HCLT 2026 논문 채택 (02) |
 | 2026.07 | **SNU AI Challenge** | 문장에 맞게 이미지 4장의 시간순서 복원, Qwen3-VL-8B · 최종 0.81300 (04) |
 | 2026.07 – 08 | **데이콘 풍력 발전량 예측** | 풍력 발전량 시계열 예측 |
 | 2026.07 – 09 | **LG Aimers 9기** | AI 교육 수료 후 Phase 2 해커톤, 투구 제구 성공 확률 예측 · 상위 8% (03) |
